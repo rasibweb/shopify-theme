@@ -1,11 +1,5 @@
 <h2>{{ collections['mnes'].title }}</h2>
 
 {% for product in collections['mens'].products %}
-<div>
-    <a href="{{product.url}}">
-    <img src="{{ product.featured_image | image_url: width:400 }}">
-    <h3>{{ product.title }}</h3>
-    <p>{{ product.price | money }}</p>
-</div>
-  {{- product.title | link_to: product.url }}
+  {% render 'product-item', product: product  %}
 {% endfor %}
