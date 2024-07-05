@@ -6,9 +6,10 @@
             <li>{{ link.title | link_to: link.url }}</li>
         {%- endfor %}
     </ul>
-
-    <form action="/search">
-        <input type="search" name="q">
-        <button type="submit">Search</button>
-    </form>
+    {% if settings.show_search %}
+        <form action="/search">
+            <input type="search" name="q">
+            <button type="submit">Search</button>
+        </form>
+    {% endif %}
 </header>
