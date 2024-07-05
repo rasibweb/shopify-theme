@@ -1,5 +1,17 @@
-<h2>{{ collections['mnes'].title }}</h2>
+<!DOCTYPE html>
+<html lang="{{ request.locale }}">
+  <head>
+      <meta charset="UTF-8">
+      <title>{{ page_title }}</title>
 
-{% for product in collections['mens'].products %}
-  {% render 'product-item', product: product  %}
-{% endfor %}
+      <!-- Include external CSS -->
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" type="text/css">
+  </head>
+  <body>
+    <h2>{{ collections['mnes'].title }}</h2>
+
+    {% for product in collections['mens'].products %}
+      {% render 'product-item', product: product  %}
+    {% endfor %}
+  </body>
+</html>
